@@ -60,8 +60,13 @@ public class SqlDataProvider
         }
     }
     
-    public SqlDataReader ReaderExecute(string query)
+    public Dictionary<string, List<string?>> ReaderExecute(string query)
     {
+        if (query is null)
+        {
+            throw new Exception("Query is null");
+        }
+        var result = new Dictionary<string, List<string?>>();
         try
         {
             using (var connection = new SqlConnection(ConnectionString))
@@ -69,7 +74,21 @@ public class SqlDataProvider
                 connection.Open();
                 using (var command = new SqlCommand(query, connection))
                 {
-                    return command.ExecuteReader();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        List<string?> values = new List<string?>();
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            values.Add(reader[i].ToString());
+                        }
+
+                        string key = reader[0]?.ToString() ?? "null";
+                        if (!result.ContainsKey(key))
+                        {
+                            result.Add(key, values);
+                        }
+                    }
                 }
             }
         }
@@ -77,5 +96,6 @@ public class SqlDataProvider
         {
             throw new Exception(e.Message);
         }
+        return result;
     }
 }

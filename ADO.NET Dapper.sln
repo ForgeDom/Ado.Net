@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET Dapper", "ADO.NET Dapper\ADO.NET Dapper.csproj", "{5C76C966-69C9-40E9-B849-B1B6BFF0A580}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{4B0C9395-F17D-4AE8-AFDD-90CB137231C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{5C76C966-69C9-40E9-B849-B1B6BFF0A580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C76C966-69C9-40E9-B849-B1B6BFF0A580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C76C966-69C9-40E9-B849-B1B6BFF0A580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B0C9395-F17D-4AE8-AFDD-90CB137231C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B0C9395-F17D-4AE8-AFDD-90CB137231C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B0C9395-F17D-4AE8-AFDD-90CB137231C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B0C9395-F17D-4AE8-AFDD-90CB137231C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
